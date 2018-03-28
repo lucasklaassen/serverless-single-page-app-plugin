@@ -24,9 +24,7 @@ class ServerlessPlugin {
   syncDirectory() {
     const s3Bucket = this.serverless.variables.service.custom.s3Bucket;
     const s3BucketDirectory = this.serverless.variables.service.custom.s3BucketDirectory;
-    const profile = this.serverless.variables.service.provider.profile;
     const args = [
-      `--profile=${profile}`,
       's3',
       'sync',
       `${s3BucketDirectory}/`,
